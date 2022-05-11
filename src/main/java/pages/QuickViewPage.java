@@ -7,8 +7,6 @@ import org.openqa.selenium.support.PageFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.equalTo;
 
 import java.util.List;
 
@@ -37,8 +35,9 @@ public class QuickViewPage extends BasePage {
         for (WebElement element : thumbsList) {
             mouseHover(element);
             element = findElementInAnotherElement(element, "img");
-            assertThat(getAttributeValue(element, "src"),
-                    equalTo(getAttributeValue(viewedImage, "src").replaceAll("large", "cart")));
+            assert(getAttributeValue(element, "src").
+                    equals(getAttributeValue(viewedImage, "src").replaceAll("large", "cart")));
+            log.info("Image with id: " + getAttributeValue(element, "id") + " was checked");
         }
         return this;
     }

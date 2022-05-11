@@ -1,0 +1,16 @@
+#Choose active environment: test1, test2
+activeEnvironmentName: test1
+browser:
+  #Available browsers: chrome ; firefox ; default: Edge
+  browserName: chrome
+environments:
+  test1:
+    envName: test1
+    appUrl: http://automationpractice.com/index.php
+    waitTime: 15
+
+
+  test2:
+    envName: test2
+    appUrl: http://automationpractice.com/index.php
+    waitTime: 30
